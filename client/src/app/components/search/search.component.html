@@ -1,0 +1,10 @@
+<div class="search-content">
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Search by name</mat-label>
+      <textarea matInput placeholder="Ex. Homer..." [formControl]="search"></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="handleSearch()">Search</button>
+  </form>
+</div>
+

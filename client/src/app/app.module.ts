@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderModule } from './components/header/header.module';
 import { CharacterModule } from './components/character/character.module';
+import { SearchModule } from './components/search/search.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CharacterModule } from './components/character/character.module';
     HttpClientModule,
     AppRoutingModule,
     HeaderModule,
-    CharacterModule
+    CharacterModule,
+    SearchModule
   ],
   providers: [],
   bootstrap: [AppComponent]
