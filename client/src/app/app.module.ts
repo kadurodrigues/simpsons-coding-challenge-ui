@@ -1,13 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderModule } from './components/header/header.module';
 import { CharacterModule } from './components/character/character.module';
 import { SearchModule } from './components/search/search.module';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import * as characterReducer from './reducers/character.reducer';
+import { SearchCharacterEffects } from './effects/search-character.effects';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,9 @@ import { SearchModule } from './components/search/search.module';
     AppRoutingModule,
     HeaderModule,
     CharacterModule,
-    SearchModule
+    SearchModule,
+    StoreModule.forRoot({ state: characterReducer.reducer }),
+    EffectsModule.forRoot([SearchCharacterEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

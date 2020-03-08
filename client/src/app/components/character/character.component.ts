@@ -1,16 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Character } from 'src/app/models/character';
-import { CharacterService } from './character.service';
+import { Observable } from 'rxjs';
+
+interface CharactersState {
+  character: Character,
+  hasError: boolean,
+  isFetching: boolean
+}
 
 @Component({
   selector: 'app-character',
   templateUrl: './character.component.html',
-  styleUrls: ['./character.component.scss']
+  styleUrls: ['./character.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CharacterComponent implements OnInit {
-  character: Character
+  character$: Observable<Character>;
+  isFetching$: Observable<boolean>;
+  hasError$: Observable<boolean>;
 
-  constructor(public characterService: CharacterService) { }
+  constructor(private store: Store<{ state: CharactersState }>) {
+    this.character$ = this.store.select(({ state: { character } }) => character);
+    this.isFetching$ = this.store.select(({ state: { isFetching } }) => isFetching);
+    this.hasError$ = this.store.select(({ state: { hasError } }) => hasError);
+  }
 
   ngOnInit(): void {}
 
