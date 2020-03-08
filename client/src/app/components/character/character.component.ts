@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Character } from 'src/app/models/character';
 import { Observable } from 'rxjs';
@@ -13,7 +13,6 @@ interface CharactersState {
   selector: 'app-character',
   templateUrl: './character.component.html',
   styleUrls: ['./character.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CharacterComponent implements OnInit {
   character$: Observable<Character>;

@@ -1,7 +1,103 @@
 .mat-card {
   width: 300px;
+  padding: 0;
 }
-.mat-card-image {
-  margin: 0;
-  max-width: 150px;
+
+.mat-card-header {
+  padding: 12px;
+  border-radius: 4px 4px 0 0;
+  background-color: #f3f3f3;
+}
+
+.mat-card-title {
+  margin-bottom: 8px !important;
+}
+
+.mat-card-subtitle {
+  margin-bottom: 4px !important;
+}
+
+.mat-card-subtitle + .mat-card-subtitle  {
+  font-size: 12px;
+  color: #333;
+  margin-top: 0;
+}
+
+::ng-deep .mat-card-header-text {
+  margin: 0 !important;
+}
+
+.card-info {
+  margin-left: 12px;
+}
+
+.card-subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.card-image-container {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  text-align: center;
+  display: inline-block;
+  text-align: center;
+  align-items: flex-start;
+  background-color: #fff;
+  box-shadow: 0px 3px 6px rgba(0,0,0,.1);
+}
+
+.mat-card-content {
+  padding: 16px;
+  margin-bottom: 0;
+}
+
+.mat-card-actions {
+  padding-top: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px !important;
+}
+
+.card-list {
+  list-style: none;
+
+  &__item {
+    padding: 18px 0;
+    border-bottom: 1px solid #d3d3d3;
+
+    q {
+      position: relative;
+      margin-left: 15px;
+    }
+
+    q::before,
+    q::after {
+      display: block;
+      position: absolute;
+      color: #fed90f;
+      font-size: 42px;
+    }
+
+    q::before {
+      top: 0;
+      left: -16px;
+    }
+
+    q::after {
+      bottom: -16px;
+      right: -20px;
+    }
+  }
+}
+
+.no-results {
+  p {
+    font-size: 24px;
+    color: #fff;
+  }
 }

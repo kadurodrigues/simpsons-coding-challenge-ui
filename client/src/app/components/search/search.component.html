@@ -1,10 +1,17 @@
-<div class="search-content">
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
-      <mat-label>Search by name</mat-label>
-      <textarea matInput placeholder="Ex. Homer..." [formControl]="search"></textarea>
+<div class="search">
+  <form class="search__form">
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Character:</mat-label>
+      <input matInput placeholder="Ex. Homer" [formControl]="search" >
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="handleSearch()">Search</button>
+    <button
+      class="search__button"
+      mat-flat-button
+      color="primary"
+      (click)="handleSearch()"
+    >
+      Search
+    </button>
   </form>
 </div>
 

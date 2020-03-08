@@ -12,6 +12,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import * as characterReducer from './reducers/character.reducer';
 import { SearchCharacterEffects } from './effects/search-character.effects';
+import { SearchService } from './services/search.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { SearchCharacterEffects } from './effects/search-character.effects';
     StoreModule.forRoot({ state: characterReducer.reducer }),
     EffectsModule.forRoot([SearchCharacterEffects])
   ],
-  providers: [],
+  providers: [SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,22 +1,26 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import { createReducer, on } from '@ngrx/store';
 import { Character } from '../models/character';
 import { SearchCharactersAction } from '../actions';
 
 export interface State {
-  characters: Character[],
-  character: any,
+  character: Character,
   isFetching: boolean,
   hasError: boolean
 }
 
 export const initialState: State = {
-  characters: [],
-  character: {},
+  character: {
+    _id: '',
+    firstName: '',
+    lastName: '',
+    picture: '',
+    age: 0
+  },
   isFetching: false,
   hasError: false
 }
 
-const characterReducer = createReducer(
+export const reducer = createReducer(
   initialState,
   on(SearchCharactersAction.search, state => ({
     ...state,
@@ -36,7 +40,3 @@ const characterReducer = createReducer(
     hasError: true
   }))
 )
-
-export function reducer(state: State | undefined, action: Action) {
-  return characterReducer(state, action);
-}

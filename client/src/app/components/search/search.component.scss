@@ -1,4 +1,40 @@
-.search-content {
+.search {
   padding: 20px;
-  background-color: goldenrod;
+  background-color: #fff6c6;
+
+  &__form {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button {
+    width: 90px;
+    border-radius: 0 4px 4px 0;
+  }
 }
+
+::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 0;
+}
+
+::ng-deep .mat-form-field {
+  width: 300px;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
+  margin: 0 !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-end {
+  border-radius: 0 !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  opacity: 1 !important;
+  color: rgb(103, 58, 182) !important;
+  background-color: #fff !important;
+}
+
+
+
+
