@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Character } from 'src/app/models/character';
 import { Observable } from 'rxjs';
@@ -14,7 +14,7 @@ interface CharactersState {
   templateUrl: './character.component.html',
   styleUrls: ['./character.component.scss'],
 })
-export class CharacterComponent implements OnInit {
+export class CharacterComponent {
   character$: Observable<Character>;
   isFetching$: Observable<boolean>;
   hasError$: Observable<boolean>;
@@ -24,7 +24,4 @@ export class CharacterComponent implements OnInit {
     this.isFetching$ = this.store.select(({ state: { isFetching } }) => isFetching);
     this.hasError$ = this.store.select(({ state: { hasError } }) => hasError);
   }
-
-  ngOnInit(): void {}
-
 }
